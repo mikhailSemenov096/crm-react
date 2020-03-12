@@ -2,7 +2,7 @@ import React from 'react';
 import './CheckInput.scss';
 
 export const CheckInput = ({
-	type, inputId, inputName, classes, text, onChange
+	type, inputId, inputName, classes, text, checked, onChange
 }) => {
 	return (
 		<label htmlFor={inputId} className={`check-container ${classes}`}>
@@ -11,6 +11,7 @@ export const CheckInput = ({
 				id={inputId} 
 				name={inputName} 
 				className='check-container__input'
+				checked={checked}
 				onChange={onChange}
 			/>
 			<span className='check-container__btn'></span>
@@ -24,5 +25,6 @@ export const CheckInput = ({
 CheckInput.defaultProps = {
 	classes: '',
 	type: 'checkbox',
+	checked: false,
 	onChange: ()=> {}
 }

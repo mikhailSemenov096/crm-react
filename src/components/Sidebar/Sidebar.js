@@ -1,22 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Sidebar.scss';
+import classNames from 'classnames';
 import { Navigation } from './Navigation';
 import { CheckInput } from 'components/CheckInput/CheckInput';
 
+const initialState = !localStorage.toggleChecked ? true : JSON.parse(localStorage.toggleChecked);
+
 export const Sidebar = () => {
-	const changeHandler = (event) => {
-		console.log(event.target.checked)
-	}
+	const [checked, setChecked] = useState(initialState);
+
+	useEffect(() => localStorage.setItem('toggleChecked', checked), [checked]);
+
+	const sidebarClasses = classNames(
+		'sidebar',
+		'box-shadow',
+		{'sidebar_mini': !checked}
+	)
+
 	return (
-		<div className={`sidebar box-shadow`}>
+		<div className={sidebarClasses}>
 			<div className='sidebar__toggle-nav'>
-				<div className="sidebar__toggle-nav-input">
+				<div className='sidebar__toggle-nav-input'>
 					<CheckInput	
 						type={'checkbox'}
 						inputId={'toggle-sidebar'}
 						inputName={'toggle-sidebar'}
 						classes={'check-container-toggle'}
-						onChange={changeHandler}
+						checked={checked}
+						onChange={() => setChecked(!checked)}
 					/>
 
 				</div>
