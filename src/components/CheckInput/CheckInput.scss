@@ -1,0 +1,49 @@
+.check-container {
+	&__input {
+		display: none;
+	}
+}
+
+.check-container-toggle {
+	position: relative;
+    display: block;
+    width: 17px;
+    height: 10px;
+    cursor: pointer;
+    &::before {
+	    content: "";
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    display: block;
+	    background: #748aa1;
+	    border-radius: 10px;
+	    transition: background .2s ease;
+    }
+
+    .check-container__input {
+    	&:checked {
+			& + .check-container__btn {
+			    background: #fff;
+			    transform: translateX(7px);
+			    transition: all 0.2s cubic-bezier(0.8, 0.4, 0.3, 1.25), background 0.15s ease;
+			    box-shadow: 0 3px 8px rgba(18, 122, 193, 0.2);
+			}
+    	}
+    }
+
+    .check-container__btn {
+    	position: absolute;
+	    top: 50%;
+	    left: 2px;
+	    width: 6px;
+	    height: 6px;
+	    display: block;
+	    background: #fff;
+	    border-radius: 50%;
+	    transition: all 0.3s ease;
+	    margin-top: -3px;
+    }
+}

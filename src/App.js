@@ -6,16 +6,12 @@ import {Login} from './pages/Login/Login';
 import {Debtors} from './pages/Debtors/Debtors';
 import {Profile} from './pages/Profile/Profile';
 import {Telephony} from './pages/Telephony/Telephony';
-import logo from './images/logo.svg';
 
 function App() {
   return (
   	<BrowserRouter>
   		<div className="container">
   			<div className="row">
-  				<svg viewBox={logo.viewBox}>
-					  <use xlinkHref={logo.id} />
-					</svg>
   				<div className="col-auto">
   					<Sidebar></Sidebar>
   				</div>
