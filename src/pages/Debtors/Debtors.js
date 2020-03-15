@@ -1,9 +1,11 @@
 import React from 'react';
 import './Debtors.scss'
-import { Sidebar } from 'components/Sidebar/Sidebar'
 
-export const Debtors = ()=> {
+const Debtors = (props)=> {
+	console.log(props)
 	return (
 		<h1>Debtors</h1>
 	)
 }
+
+export default Debtors;

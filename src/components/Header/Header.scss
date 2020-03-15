@@ -1,0 +1,91 @@
+@mixin header-person-active {
+	background-color: #ebedf4;
+
+	&::before {
+		opacity: 0;
+	}
+}
+
+.header {
+	$padding-size: 10px;
+	padding: 0 $padding-size;
+	display: flex;
+	justify-content: flex-end;
+
+	&__info {
+		display: flex;
+		margin-right: -$padding-size;
+		flex: 0 0 auto;
+	}
+
+	&__person {
+		position: relative;
+	    display: flex;
+	    justify-content: space-between;
+	    align-items: center;
+	    padding: 9px 10px;
+	    cursor: pointer;
+	    transition: background 0.3s ease-out;
+	    border-radius: 0 4px 4px 0;
+	    &::before {
+	    	content: '';
+		    width: 1px;
+		    height: 30px;
+		    display: block;
+		    position: absolute;
+		    top: 50%;
+		    margin-top: -15px;
+		    left: -1px;
+		    background-color: #ebedf4;
+		    transition: opacity 0.3s ease-out;
+	    }
+	    &::after {
+	    	content: '';
+		    width: 0;
+		    height: 0;
+		    color: #b8c5d3;
+		    border-left: 4px solid transparent;
+		    border-right: 4px solid transparent;
+		    border-top: 5px solid #79849B;
+	    }
+
+	    &:hover {
+	    	@include header-person-active;
+	    }
+	}
+	
+	&__person-user {
+		display: flex;
+		align-items: center;
+		margin-right: 45px;
+	}
+
+	&__person-avatar {
+	   	width: 40px;
+    	height: 40px;
+    	padding: 2px;
+    	margin-right: 8px;
+	}
+
+	&__time-wrap {
+		padding: 9px 16px;
+	}
+
+	&__time {
+		display: flex;
+		align-items: center;
+
+		.current-time__date {
+		    margin-right: 16px;
+		}
+
+		.current-time__time {
+			font-family: 'Roboto-Light', sans-serif;
+			font-size: 32px;
+		}
+	}
+}
+
+.header-person_active {
+	@include header-person-active;
+}

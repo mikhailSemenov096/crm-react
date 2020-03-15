@@ -1,10 +1,12 @@
 import React from 'react';
 import Icons from 'images/symbols.svg';
 
-export const IconSvg = ({icon, viewBox}) => {
+const IconSvg = ({icon}) => {
 	return (
 		<svg className={`icon ${icon}`}>
 	    	<use xlinkHref={`${Icons}#${icon}`} />
 	  	</svg>
   	)
 }
+
+export default IconSvg;

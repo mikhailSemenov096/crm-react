@@ -1,0 +1,50 @@
+.footer {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-column-gap: 20px;
+	color: #748aa1;
+	padding: 11px 0;
+	font-size: 12px;
+	&::before {
+		content: '';
+		width: 240px;
+		display: block;
+		height: 1px;
+		transition: width .3s ease-out;
+	}
+	
+	&__info {
+		display: flex;
+
+	}
+
+	&__dev-info-descr {
+		margin-right: 38px;
+	}
+	
+	&__dev-info-phone {
+		font-weight: 700;
+		margin-right: 38px;
+	}
+
+	&__dev-info-site {
+		a {
+			text-decoration: underline;
+		}
+	}
+
+	&__offers {
+		flex: 1 0 0;
+		text-align: right;
+		a {
+			text-decoration: underline;
+		}
+	}
+
+
+	@media (max-width: 992px) {
+		&::before {
+			width: 56px;
+		}
+	}
+}
