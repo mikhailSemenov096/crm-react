@@ -2,14 +2,23 @@ import React, {useState, useEffect} from 'react';
 import { CSSTransition } from 'react-transition-group';
 import IconSvg from 'components/IconSvg';
 
-const ButtonUp = ({mixClass, currentY}) => {
+const ButtonUp = ({ mixClass, currentY }) => {
 	const [toTop, setToTop] = useState(false);
 
 	useEffect(() => {
-		document.addEventListener('scroll', changeStateScroll);
+		const changeScroll = () => {
+			if (window.pageYOffset > currentY) {
+				setToTop(true);
+			} else {
+				setToTop(false);
+			}
+		}
+
+		document.addEventListener('scroll', changeScroll);
 		
-		return () => document.removeEventListener('scroll', changeStateScroll);
-	}, []);
+		return () => document.removeEventListener('scroll', changeScroll);
+
+	}, [currentY]);
 
 	const scrollToTopHandler = event => {
 		event.preventDefault();
@@ -18,14 +27,6 @@ const ButtonUp = ({mixClass, currentY}) => {
 			top: 0,
 			behavior: 'smooth'
 		});
-	}
-
-	const changeStateScroll = () => {
-		if (window.pageYOffset > currentY) {
-			setToTop(true);
-		} else {
-			setToTop(false);
-		}
 	}
 
 	return (

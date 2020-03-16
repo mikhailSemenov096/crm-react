@@ -7,10 +7,12 @@
 
 .sidebar {
 	$padding-size: 20px;
-
+	
+	grid-area: sidebar;
 	padding: 8px 0 0;
     width: 240px;
     transition: width 0.3s ease-out;
+    align-self: start;
 	
 	&__info {
 		padding: 0 $padding-size;

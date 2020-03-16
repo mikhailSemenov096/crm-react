@@ -1,51 +1,40 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
-import classNames from 'classnames';
-import { CSSTransition } from 'react-transition-group';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import toggleTypeSidebar from 'store/actions/sidebarActions';
 
+import classNames from 'classnames';
 import './Sidebar.scss';
+
+import { NavLink } from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group';
 import { Navigation } from './Navigation';
 import { CheckInput } from 'components/CheckInput/CheckInput';
+
 import Avatar from 'components/Avatar/Avatar';
 import LogoFull from 'images/logo-full.svg';
 import Logo from 'images/logo.svg';
 import AvaCompany from 'images/avatar-company.png';
 
 export const Sidebar = () => {
-	// const initialState = !localStorage.toggleChecked ? true : JSON.parse(localStorage.toggleChecked);
+	const sidebarState = useSelector(state => state.sidebarReducer);
 
-	const [checked, setChecked] = useState(false);
-	useEffect(() => localStorage.setItem('toggleChecked', checked), [checked]);
+	const dispatch = useDispatch();
+
+	useEffect(() => localStorage.setItem('toggleChecked', sidebarState), [sidebarState]);
 
 	const sidebarClasses = classNames(
 		'sidebar',
 		'shadow-box',
-		{'sidebar_mini': !checked}
+		{'sidebar_mini': !sidebarState}
 	)
 
 	return (
 		<CSSTransition
-			in={checked}
+			in={sidebarState}
+			timeout={300}
 			classNames={{
 				enterActive: 'sidebar_full',
 				exitDone: 'sidebar_mini'
-			}}
-			addEndListener={(node, done) => {
-
-				const transitionEndElem = () => {
-					return new Promise((resolve, reject)=> {
-						node.addEventListener('transitionend', (event) => {
-							if (event.target !== event.currentTarget) return false;
-							resolve();
-						});
-					})
-				}
-
-				transitionEndElem().then(data => {
-					node.removeEventListener('transitionend', transitionEndElem);
-					done();
-				});
-				
 			}}
 		>
 			<aside className={sidebarClasses}>
@@ -57,8 +46,8 @@ export const Sidebar = () => {
 								inputId={'toggle-sidebar'}
 								inputName={'toggle-sidebar'}
 								classes={'check-container-toggle'}
-								checked={checked}
-								onChange={() => setChecked(!checked)}
+								checked={sidebarState}
+								onChange={() => dispatch(toggleTypeSidebar())}
 							/>
 						</div>
 					</div>

@@ -1,11 +1,21 @@
 import React, {useState, useEffect} from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import classNames from 'classnames';
 import './Footer.scss';
 
 import CurrentTime from 'components/CurrentTime';
 
 const Footer = () => {
+	const sidebarState = useSelector(state => state.sidebarReducer);
+
+	const footerClasses = classNames(
+		'footer',
+		{'footer_mini': !sidebarState}
+	)
+
 	return (
-		<footer className='footer'>
+		<footer className={footerClasses}>
 			<div className='footer__info'>
 				<div className='footer__dev-info-descr'>
 					<CurrentTime 

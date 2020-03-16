@@ -10,7 +10,7 @@ import {Profile} from './pages/Profile/Profile';
 import {Telephony} from './pages/Telephony/Telephony';
 import ButtonUp from './components/ButtonUp';
 
-function App() {
+const App = () => {
   return (
   	<BrowserRouter>
   		<div className='main-grid'>
