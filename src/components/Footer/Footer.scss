@@ -43,10 +43,42 @@
 	}
 
 
-	@media (max-width: 992px) {
+	@media (max-width: 1200px) {
 		&::before {
 			width: 56px;
 		}
+	}
+
+	@media (max-width: 992px) {
+		grid-template-columns: 1fr;
+
+		&::before {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.footer__info {
+		flex-wrap: wrap;
+	}
+
+	.footer__dev-info-descr, 
+	.footer__dev-info-phone,
+	.footer__dev-info-site,
+	.footer__offers {
+		max-width: 50%;
+		flex: 0 0 50%;
+		margin-right: 0;
+	}
+
+	.footer__dev-info-phone {
+		text-align: right;
+		margin-bottom: 15px;
+	}
+
+	.footer__dev-info-descr {
+		margin-bottom: 15px;
 	}
 }
 

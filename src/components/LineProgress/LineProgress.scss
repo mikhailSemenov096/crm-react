@@ -1,0 +1,56 @@
+.line-progress {
+	display: flex;
+	align-items: center;
+
+	&__descr {
+		display: flex;
+		align-items: center;
+		flex: 0 0 120px;
+		margin-right: 20px;
+		&::before {
+			content: '';
+			display: inline-block;
+			flex: 0 0 16px;
+			width: 16px;
+			height: 16px;
+			margin-right: 15px;
+		}
+	}
+
+	&__line {
+		display: flex;
+		align-items: center;
+		flex: 1 0 0;
+	}
+
+	&__prg-line {
+		display: inline-block;
+		height: 8px;
+		border-radius: 0 4px 4px 0;
+		margin-right: 7px;
+	}
+
+	&__count {
+		font-size: 17px;
+		flex: 0 0 29px;
+		text-align: right;
+	}
+}
+
+.line-progress_green {
+	.line-progress__prg-line {
+		background-color: #73b935;
+	}
+}
+
+.line-progress_blue {
+	.line-progress__prg-line {
+		background-color: #1f8efa;
+	}
+}
+
+.line-progress_red {
+	.line-progress__prg-line {
+		background-color: #ee423d;
+	}
+}

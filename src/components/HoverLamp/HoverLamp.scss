@@ -1,0 +1,56 @@
+.lamp-container {
+	position: relative;
+	overflow: hidden;
+	z-index: 2;
+	cursor: pointer;
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		border-radius: inherit;
+		transition: opacity 0.3s ease-out;
+		background: inherit;
+		margin: 1.6px;
+		opacity: 0;
+	}
+
+	&:hover {
+		&::before {
+			opacity: 0.75;
+			transition-delay: 0s;
+		}
+	}
+}
+
+.lamp {
+	pointer-events: none;
+	position: absolute;
+	display: block;
+	transform: translate(-50%, -50%);
+	background: radial-gradient(circle at center, #fff 0%, transparent 60%);
+    mix-blend-mode: screen;
+    z-index: -1;
+
+    &.enter {
+	  	opacity: 0;
+	}
+
+	&.enter-active {
+	  	opacity: 1;
+	  	transition: opacity .3s ease-out;
+	}
+
+	&.exit {
+	  	opacity: 1;
+	}
+
+	&.exit-active {
+	  	opacity: 0;
+	  	transition: opacity .3s ease-out;
+	}
+}

@@ -4,6 +4,7 @@ const CurrentTime = ({mixClass, time, date, year}) => {
 	const monthNames = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
 
 	const [currentTime, setCurrentTime] = useState(new Date());
+	
 	useEffect(() => {
 		const interval = setInterval(() => setCurrentTime(new Date()), 1000);
 

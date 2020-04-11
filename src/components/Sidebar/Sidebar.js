@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import toggleTypeSidebar from 'store/actions/sidebarActions';
-
+import useMediaQuery from 'react-use-media-query-hook';
+import { toggleTypeSidebar, addTypeSidebar, removeTypeSidebar } from 'store/actions/sidebarActions';
 import classNames from 'classnames';
 import './Sidebar.scss';
-
 import { NavLink } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import { Navigation } from './Navigation';
@@ -16,26 +15,40 @@ import Logo from 'images/logo.svg';
 import AvaCompany from 'images/avatar-company.png';
 
 export const Sidebar = () => {
-	const sidebarState = useSelector(state => state.sidebarReducer);
+	const isMobile = useMediaQuery('(max-width: 991px)');
 
+	const sidebarState = useSelector(state => state.sidebarReducer);
 	const dispatch = useDispatch();
 
 	useEffect(() => localStorage.setItem('toggleChecked', sidebarState), [sidebarState]);
 
+	useEffect(() => {
+		if (isMobile) {
+			dispatch(removeTypeSidebar());
+		} else {
+			dispatch(addTypeSidebar());
+		}
+		
+	}, [isMobile])
+
 	const sidebarClasses = classNames(
 		'sidebar',
 		'shadow-box',
-		{'sidebar_mini': !sidebarState}
+		{'sidebar_mini': !sidebarState && !isMobile}
 	)
+
+	const sidebarClassesAnimate = {
+		enterActive: 'sidebar_full',
+		exitDone: 'sidebar_mini'
+	}
 
 	return (
 		<CSSTransition
 			in={sidebarState}
 			timeout={300}
-			classNames={{
-				enterActive: 'sidebar_full',
-				exitDone: 'sidebar_mini'
-			}}
+			classNames={sidebarClassesAnimate}
+			mountOnEnter={isMobile}
+			unmountOnExit={isMobile}
 		>
 			<aside className={sidebarClasses}>
 				<div className='sidebar__info'>

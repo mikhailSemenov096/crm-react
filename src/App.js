@@ -9,6 +9,7 @@ import Debtors from './pages/Debtors/Debtors';
 import {Profile} from './pages/Profile/Profile';
 import {Telephony} from './pages/Telephony/Telephony';
 import ButtonUp from './components/ButtonUp';
+import Notice from './components/Notice/Notice';
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
 			<Footer />
   		</div>
   		<ButtonUp />
+  		<Notice />
     </BrowserRouter>
   );
 }

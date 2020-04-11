@@ -8,11 +8,12 @@
 
 .header {
 	$padding-size: 10px;
-
+	
 	grid-area: header;
 	padding: 0 $padding-size;
 	display: flex;
 	justify-content: flex-end;
+	margin-bottom: 20px;
 
 	&__info {
 		display: flex;
@@ -70,7 +71,9 @@
 	}
 
 	&__time-wrap {
-		padding: 9px 16px;
+		padding: 0 16px;
+		display: flex;
+		align-items: center;
 	}
 
 	&__time {
@@ -82,7 +85,7 @@
 		}
 
 		.current-time__time {
-			font-family: 'Roboto-Light', sans-serif;
+			font-weight: 300;
 			font-size: 32px;
 		}
 	}
@@ -90,4 +93,31 @@
 
 .header-person_active {
 	@include header-person-active;
+}
+
+@media (max-width: 992px) {
+	.header {
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+@media (max-width: 576px) {
+	.header {
+		margin-bottom: 10px;
+	}
+
+	.header__time-wrap {
+		display: none;
+	}
+
+	.header__person {
+		&::before {
+			display: none;
+		}
+	}
+
+	.header__info {
+
+	}
 }

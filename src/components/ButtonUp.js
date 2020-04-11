@@ -6,12 +6,20 @@ const ButtonUp = ({ mixClass, currentY }) => {
 	const [toTop, setToTop] = useState(false);
 
 	useEffect(() => {
+		let scrollPos = 0;
+
 		const changeScroll = () => {
-			if (window.pageYOffset > currentY) {
-				setToTop(true);
+			if (scrollPos > window.pageYOffset) {
+				if (window.pageYOffset > currentY) {
+					setToTop(true);
+				} else {
+					setToTop(false);
+				}
 			} else {
 				setToTop(false);
 			}
+
+			scrollPos = window.pageYOffset;
 		}
 
 		document.addEventListener('scroll', changeScroll);

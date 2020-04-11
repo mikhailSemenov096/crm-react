@@ -11,16 +11,17 @@ export const Navigation = () => {
 		},
 
 		{
+			to: '/profile',
+			icon: 'icon-house',
+			text: 'Мой профиль'
+		},
+
+		{
 			to: '/debtors',
 			icon: 'icon-fire',
 			text: 'Задолжники'
 		},
 
-		{
-			to: '/profile',
-			icon: 'icon-house',
-			text: 'Мой профиль'
-		}
 	]
 
 	return (

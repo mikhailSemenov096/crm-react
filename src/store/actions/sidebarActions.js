@@ -1,9 +1,19 @@
-import { TOGGLE_SIDEBAR } from './actionTypes';
+import { TOGGLE_SIDEBAR, ADD_SIDEBAR, REMOVE_SIDEBAR } from 'store/types';
 
-const toggleTypeSidebar = () => {
+export const toggleTypeSidebar = () => {
 	return {
 		type: TOGGLE_SIDEBAR
 	}
 }
 
-export default toggleTypeSidebar;
+export const addTypeSidebar = () => {
+	return {
+		type: ADD_SIDEBAR
+	}
+}
+
+export const removeTypeSidebar = () => {
+	return {
+		type: REMOVE_SIDEBAR
+	}
+}

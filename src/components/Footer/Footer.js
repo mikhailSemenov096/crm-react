@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 import classNames from 'classnames';
 import './Footer.scss';
@@ -34,7 +34,7 @@ const Footer = () => {
 				</div>
 
 				<div className='footer__offers'>
-					<a href='#' className='footer__offers-link'>Отзывы и предложения</a>
+					<a href='#dd' className='footer__offers-link'>Отзывы и предложения</a>
 				</div>
 			</div>
 		</footer>

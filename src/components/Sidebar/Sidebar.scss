@@ -1,7 +1,9 @@
 @mixin nav-link-active($opacity) {
 	background-color: rgba(#ebedf4, $opacity);
-	.icon {
-		fill: #748aa1;
+	.sidebar__nav-icon {
+		.icon {
+			fill: #748aa1;
+		}
 	}
 }
 
@@ -11,6 +13,7 @@
 	grid-area: sidebar;
 	padding: 8px 0 0;
     width: 240px;
+    height: 100%;
     transition: width 0.3s ease-out;
     align-self: start;
 	
@@ -166,7 +169,7 @@
 	@include sidebar-mini-styles;
 }
 
-@media (max-width: 992px) {
+@media (min-width: 992px) and (max-width: 1200px) {
 	.sidebar {
 		width: 56px;
 
@@ -181,5 +184,37 @@
 
 		@include sidebar-mini-styles;
 	}
+	
+}
+
+@media (max-width: 991px) {
+	.sidebar {
+		position: fixed;
+		z-index: 99;
+		border-radius: 0px;
+		top: 0;
+		left: 0;
+		width: 100%;
+		transition: none;
+	}
+
+	.sidebar__toggle-nav {
+		display: none;
+	}
+
+	.sidebar__nav-list {
+		width: 100%;
+	}
+
+	.sidebar__nav-link {
+		justify-content: center;
+	}
+
+	.sidebar__nav-icon {
+		display: none;
+	}
+}
+
+@media (max-width: 576px) {
 	
 }

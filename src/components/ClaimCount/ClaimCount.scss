@@ -1,0 +1,56 @@
+.claim-count {
+	position: relative;
+	padding: 11px 10px;
+	cursor: pointer;
+	border-radius: 4px;
+	color: #fff;
+	overflow: hidden;
+	transition: all .3s linear;
+
+	&__title {
+		font-size: 14px;
+		font-weight: 700;
+		margin-bottom: 5px;
+	}
+
+	&__small-text {
+		text-transform: lowercase;
+	}
+
+	&__counter {
+		text-align: right;
+	    font-size: 32px;
+	    font-weight: 300;
+	}
+
+	&__dots {
+		position: absolute;
+		top: 5px;
+		right: 5px;
+		display: inline-block;
+		width: 8px;
+		height: 2px;
+		background: url('../../images/icons/dots.svg') center/cover no-repeat;
+		cursor: pointer;
+	}
+}
+
+.claim-count_month {
+	background: linear-gradient(180deg, #1076be 0%, #26b3f0 100%) center/cover no-repeat;
+	box-shadow: 0 5px 12px 0 rgba(16, 120, 191, 0.5);
+}
+
+.claim-count_day {
+	background: linear-gradient(180deg, #6e66d3 0%, #9765af 64%, #a164a6 100%) center/cover no-repeat;
+    box-shadow: 0 5px 12px 0 rgba(112, 102, 209, 0.5)
+}
+
+.claim-count_work {
+	background: linear-gradient(to top, #9cd946 0%, #66af30 100%) center/cover no-repeat;
+    box-shadow: 0 5px 12px 0 rgba(104, 177, 49, 0.5);
+}
+
+.claim-count_overdue {
+	background: linear-gradient(180deg, #ff6873 0%, #ff876f 64%, #ff8c6f 100%) center/cover no-repeat;
+    box-shadow: 0 5px 12px 0 rgba(255, 104, 114, 0.5)
+}

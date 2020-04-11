@@ -1,0 +1,66 @@
+.notice {
+	position: fixed;
+	top: 82px;
+	right: 20px;
+	pointer-events: auto;
+	z-index: 9999;
+	width: 300px;
+	min-height: 75px;
+	padding: 10px 10px 10px 25px;
+	box-shadow: 0 2px 10px rgba(49, 57, 77, 0.4);
+	border-radius: 4px;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	
+	&__close-btn {
+		position: absolute;
+		width: 6px;
+		height: 6px;
+		top: 10px;
+		right: 10px;
+		background: url('../../images/icons/close.svg') center no-repeat;
+	    cursor: pointer;
+	}
+
+	&__title {
+		font-weight: 700;
+		text-transform: uppercase;
+		margin-bottom: 7px;
+	}
+}
+
+.notice_error {
+	background-color: #ff876f;
+}
+
+.notice_warning {
+	background-color: #eeb61c;
+}
+
+.notice_success {
+	background-color: #93cf5b;
+}
+
+.notice-enter {
+	opacity: 0;
+	transform: translateY(30px);
+}
+
+.notice-enter-active {
+	opacity: 1;
+	transform: translateY(0px);
+	transition: opacity .3s ease-out, transform .3s ease-out;
+}
+
+.notice-exit {
+	opacity: 1;
+	transform: translateY(0px);
+}
+
+.notice-exit-active {
+	opacity: 0;
+	transform: translateY(30px);
+	transition: opacity .3s ease-out, transform .3s ease-out;
+}

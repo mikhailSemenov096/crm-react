@@ -1,0 +1,88 @@
+.crm-new {
+	display: flex;
+	overflow: hidden;
+	padding: 0;
+	height: 183px;
+
+	&__img-wrap {
+		background: linear-gradient(180deg, #1076be 0%, #26b3f0 100%) center/cover no-repeat;
+		flex: 0 0 183px;
+		max-width: 183px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__img {
+		max-width: 100%;
+	}
+
+	&__info {
+		padding: 23px 10px 11px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__title {
+		font-weight: 700;
+		margin-bottom: 10px;
+	}
+
+	&__descr-wrap {
+		flex: 1 0 0;
+	}
+
+	&__descr {
+		margin: 0 0 19px 0;
+		font-size: 13px;
+		line-height: 21px;
+		height: calc(21px * 4);
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 4;
+		-webkit-box-orient: vertical;
+	}
+}
+
+.crm-new_violet {
+	.crm-new__img-wrap {
+		background: linear-gradient(180deg, #6e66d3 0%, #9765af 64%, #a164a6 100%) center/cover no-repeat;
+	}
+}
+
+.crm-new__img-wrap_bottom {
+	align-items: flex-end;
+}
+
+@media (max-width: 1480px) {
+	.crm-new_two {
+		display: none;
+	}
+
+	.debtors {
+		&:nth-child(2) {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.crm-new {
+		height: 140px;
+		font-size: 12px;
+		&__img-wrap {
+			flex: 0 0 140px;
+		}
+
+		&__descr {
+			height: calc(21px * 3);
+			-webkit-line-clamp: 3;
+			font-size: 12px;
+		}
+
+		&__info {
+			padding: 10px;
+		}
+	}
+}
