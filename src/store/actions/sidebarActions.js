@@ -1,8 +1,8 @@
-import { TOGGLE_SIDEBAR, ADD_SIDEBAR, REMOVE_SIDEBAR } from 'store/types';
+import { TOGGLE_TYPE_SIDEBAR, ADD_SIDEBAR, REMOVE_SIDEBAR } from 'store/types';
 
 export const toggleTypeSidebar = () => {
 	return {
-		type: TOGGLE_SIDEBAR
+		type: TOGGLE_TYPE_SIDEBAR
 	}
 }
 

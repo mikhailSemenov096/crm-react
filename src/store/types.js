@@ -1,4 +1,4 @@
-export const TOGGLE_SIDEBAR = 'TOGGLE_SIDEBAR';
+export const TOGGLE_TYPE_SIDEBAR = 'TOGGLE_SIDEBAR';
 export const ADD_SIDEBAR = 'ADD_SIDEBAR';
 export const REMOVE_SIDEBAR = 'REMOVE_SIDEBAR';
 export const SHOW_NOTICE = 'SHOW_NOTICE';

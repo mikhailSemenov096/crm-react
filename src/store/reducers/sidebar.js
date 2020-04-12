@@ -1,21 +1,33 @@
-import { TOGGLE_SIDEBAR, ADD_SIDEBAR, REMOVE_SIDEBAR } from 'store/types';
+import { TOGGLE_TYPE_SIDEBAR, ADD_SIDEBAR, REMOVE_SIDEBAR } from 'store/types';
 
-const initialState = !localStorage.toggleChecked ? true : JSON.parse(localStorage.toggleChecked);
+const initialState = {
+    visible: true,
+    sidebarType: !localStorage.toggleChecked ? true : JSON.parse(localStorage.getItem('toggleChecked'))
+}
 
 const sidebarReducer = (state = initialState, action) => {
 	switch(action.type) {
 
-        case TOGGLE_SIDEBAR:
+        case TOGGLE_TYPE_SIDEBAR:
 
-            return !state
+            return {
+                ...state,
+                sidebarType: !state.sidebarType
+            }
 
     	case ADD_SIDEBAR:
 
-    		return state = true
+    		return {
+                ...state,
+                visible: true
+            }
 
     	case REMOVE_SIDEBAR:
 
-    		return state = false
+    		return {
+                ...state,
+                visible: false
+            }
 
         default: 
         

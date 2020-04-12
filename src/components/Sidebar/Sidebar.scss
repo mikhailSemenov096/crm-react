@@ -7,14 +7,18 @@
 	}
 }
 
+.sidebar-wrap {
+	grid-area: sidebar;
+}
+
 .sidebar {
 	$padding-size: 20px;
 	
-	grid-area: sidebar;
+	
 	padding: 8px 0 0;
     width: 240px;
     height: 100%;
-    transition: width 0.3s ease-out;
+    transition: width .3s ease-out;
     align-self: start;
 	
 	&__info {
@@ -195,7 +199,6 @@
 		top: 0;
 		left: 0;
 		width: 100%;
-		transition: none;
 	}
 
 	.sidebar__toggle-nav {

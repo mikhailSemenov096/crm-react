@@ -8,13 +8,14 @@ import Avatar from 'components/Avatar/Avatar';
 import MenuBtn from 'components/MenuBtn/MenuBtn';
 
 const Header = (props) => {
-	const isMobile = useMediaQuery('(max-width: 991px)');
+	const isMobile1 = useMediaQuery('(max-width: 991px)');
 
 	const dispatch = useDispatch();
 
 	return (
+		
 		<header className='header shadow-box'>
-			{isMobile && <MenuBtn clickHandler={() => dispatch(addTypeSidebar())}/>}
+			{isMobile1 && <MenuBtn clickHandler={() => dispatch(addTypeSidebar())}/>}
 			<div className='header__info'>
 				<div className='header__time-wrap'>
 					<CurrentTime 
