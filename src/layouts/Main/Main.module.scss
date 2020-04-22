@@ -1,0 +1,24 @@
+.grid {
+	min-height: 100%;
+	max-width: 1920px;
+	padding: 20px 20px 0;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-template-rows: auto 1fr auto;
+	grid-auto-rows: auto;
+	grid-column-gap: 20px;
+	overflow: hidden;
+	grid-template-areas: 
+		'sidebar header'
+		'sidebar main'
+		'footer footer';
+}
+
+.section-title {
+	margin-bottom: 8px;
+	margin-top: 0;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 13px;
+}

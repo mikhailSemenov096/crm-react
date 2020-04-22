@@ -1,33 +1,42 @@
 import React from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import {Sidebar} from './components/Sidebar/Sidebar';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import {Home} from './pages/Home/Home.js';
-import {Login} from './pages/Login/Login';
-import Debtors from './pages/Debtors/Debtors';
-import {Profile} from './pages/Profile/Profile';
-import {Telephony} from './pages/Telephony/Telephony';
+import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import ButtonUp from './components/ButtonUp';
 import Notice from './components/Notice/Notice';
+
+//pages
+import Home from './pages/Home/Home.js';
+// import Login from './pages/Login/Login';
+import Debtors from './pages/Debtors/Debtors';
+import Profile from './pages/Profile/Profile';
+import Telephony from './pages/Telephony/Telephony';
+import Auth from './pages/Auth/Auth';
+
+//layouts
+import Main from './layouts/Main/Main.js';
+import Login from './layouts/Login/Login.js';
+
+
+const LayoutRoute = ({component: Component, layout: Layout, ...params}) => (
+	<Route 
+		{...params} 
+		render={props => (
+			<Layout>
+				<Component {...props}/>
+			</Layout>
+		)}
+	/>
+)
 
 const App = () => {
   return (
   	<BrowserRouter>
-  		<div className='main-grid'>
-			<Sidebar />
-			<Header/>
-			<main className='main-content'>
-				<Switch>
-		  		<Route path='/login' component={Login}></Route>
-		  		<Route path='/debtors' component={Debtors} title={'Задолжники'}></Route>
-	  			<Route path='/telephony' component={Telephony}></Route>
-	  			<Route path='/profile' component={Profile}></Route>
-	  			<Route path='/' exact component={Home}></Route>
-	  		</Switch>
-			</main>
-			<Footer />
-  		</div>
+  		<Switch>
+        <LayoutRoute path='/login' layout={Login} component={Auth}/>
+        <LayoutRoute path='/profile' layout={Main} component={Profile}/>
+        <LayoutRoute path='/telephony' layout={Main} component={Telephony}/>
+        <LayoutRoute path='/debtors' layout={Main} component={Debtors}/>
+  			<LayoutRoute path='/' exact layout={Main} component={Home}/>
+  		</Switch>
   		<ButtonUp />
   		<Notice />
     </BrowserRouter>

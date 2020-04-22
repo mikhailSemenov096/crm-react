@@ -12,7 +12,7 @@ const Notice = () => {
 		let timeout;
 
 		if (noticeState.visible) {
-			timeout = setTimeout(() => dispatch(hideNotice()), 1000)
+			timeout = setTimeout(() => dispatch(hideNotice()), 5000)
 		}
 
 		return () => clearTimeout(timeout);

@@ -6,11 +6,12 @@ import Progress from 'components/Progress/Progress';
 import CrmNew from 'components/CrmNew/CrmNew';
 import Debtors from 'components/Debtors/Debtors';
 import News from 'components/News/News';
+import ClaimsBlock from 'components/ClaimsBlock/ClaimsBlock';
 
 import CrmNewDebt from 'images/debt.png';
 import CrmNewApp from 'images/mobile-app.png';
 
-export const Home = () => {
+const Home = () => {
 
 	const claimsCountState = [
 		{type: 'month', title: 'За месяц', smallText: 'заявок', count: 10},
@@ -171,10 +172,9 @@ export const Home = () => {
 
 			<Debtors debtorsList={debts} />
 			<News newsList={news} />
-			<div className="claims">
-				<Debtors debtorsList={debts} />
-			</div>
-			
+			<ClaimsBlock />
 		</div>
 	)
 }
+
+export default Home;

@@ -15,7 +15,7 @@ const Header = (props) => {
 	return (
 		
 		<header className='header shadow-box'>
-			{isMobile1 && <MenuBtn clickHandler={() => dispatch(addTypeSidebar())}/>}
+			{isMobile1 && <MenuBtn clickHandler={() => dispatch(addTypeSidebar(true))}/>}
 			<div className='header__info'>
 				<div className='header__time-wrap'>
 					<CurrentTime 

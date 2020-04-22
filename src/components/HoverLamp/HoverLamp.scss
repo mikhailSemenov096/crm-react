@@ -3,7 +3,7 @@
 	overflow: hidden;
 	z-index: 2;
 	cursor: pointer;
-	&::before {
+	&::after {
 		content: '';
 		display: block;
 		position: absolute;
@@ -20,7 +20,7 @@
 	}
 
 	&:hover {
-		&::before {
+		&::after {
 			opacity: 0.75;
 			transition-delay: 0s;
 		}

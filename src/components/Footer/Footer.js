@@ -11,7 +11,7 @@ const Footer = () => {
 
 	const footerClasses = classNames(
 		'footer',
-		{'footer_mini': !sidebarState}
+		{'footer_mini': !sidebarState.sidebarType}
 	)
 
 	return (

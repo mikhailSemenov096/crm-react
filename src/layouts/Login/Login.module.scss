@@ -1,0 +1,30 @@
+:global {
+	.body-login {
+		background: url('../../images/login-bg.png') 115% 70px no-repeat, url('../../images/login-bg.png') 60% 70vh no-repeat, linear-gradient(43deg, #1076be 0%, #26b3f0 100%);
+        background-size: cover;
+	}
+
+	.dsd {
+		width: 50px;
+	}
+}
+
+.grid {
+	min-height: 100%;
+	max-width: 1920px;
+	padding: 20px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-column-gap: 20px;
+}
+
+.info {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.mainBlock {
+	font-size: 5px;
+}

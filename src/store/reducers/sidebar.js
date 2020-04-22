@@ -16,9 +16,10 @@ const sidebarReducer = (state = initialState, action) => {
             }
 
     	case ADD_SIDEBAR:
-
+    	
     		return {
                 ...state,
+                transition: action.payload.transition,
                 visible: true
             }
 
@@ -26,6 +27,7 @@ const sidebarReducer = (state = initialState, action) => {
 
     		return {
                 ...state,
+                transition: action.payload.transition,
                 visible: false
             }
 

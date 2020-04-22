@@ -1,8 +1,10 @@
 import React from 'react';
 import './Profile.scss'
 
-export const Profile = ()=> {
+const Profile = ()=> {
 	return (
 		<h1>Profile</h1>
 	)
 }
+
+export default Profile;

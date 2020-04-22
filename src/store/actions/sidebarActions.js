@@ -6,14 +6,16 @@ export const toggleTypeSidebar = () => {
 	}
 }
 
-export const addTypeSidebar = () => {
+export const addTypeSidebar = (transition) => {
 	return {
-		type: ADD_SIDEBAR
+		type: ADD_SIDEBAR,
+		payload: {transition}
 	}
 }
 
-export const removeTypeSidebar = () => {
+export const removeTypeSidebar = (transition) => {
 	return {
-		type: REMOVE_SIDEBAR
+		type: REMOVE_SIDEBAR,
+		payload: {transition}
 	}
 }

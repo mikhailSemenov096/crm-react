@@ -50,6 +50,7 @@
     "postcss-preset-env": "6.7.0",
     "postcss-safe-parser": "4.0.1",
     "prop-types": "^15.7.2",
+    "rc-table": "^7.4.4",
     "react": "^16.13.0",
     "react-app-polyfill": "^1.0.6",
     "react-dev-utils": "^10.2.0",
@@ -91,10 +92,10 @@
       "not op_mini all"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version",
-      "last 1 edge version"
+      "last 15 chrome version",
+      "last 15 firefox version",
+      "last 15 safari version",
+      "last 15 edge version"
     ]
   },
   "jest": {
