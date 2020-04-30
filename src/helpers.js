@@ -39,3 +39,30 @@ export const animate = ({ duration, timing, draw, cancel }) => {
 		if (cancel) cancelAnimationFrame(requestID);
 	});
 }
+
+export const getCursorPos = (input) => {
+	var r, re, rc, pos;
+
+	// if (input.selectionStart) {
+	// 	pos = input.selectionStart;
+	// } else if (document.selection) {
+	// 	input.focus();
+
+	// 	r = document.selection.createRange();
+	// 	if (r === null || typeof r === 'undefined') {
+	// 		pos = 0;
+	// 	} else {
+	// 		re = input.createTextRange();
+	// 		rc = re.duplicate();
+	// 		re.moveToBookmark(r.getBookmark());
+	// 		rc.setEndPoint('EndToStart', re);
+
+	// 		pos = rc.text.length;
+	// 	}
+
+	// } else {
+	// 	pos = 0;
+	// }
+
+	return input.selectionStart;
+}

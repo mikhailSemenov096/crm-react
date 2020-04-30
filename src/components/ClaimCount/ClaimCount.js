@@ -3,12 +3,9 @@ import './ClaimCount.scss';
 import HoverLamp from 'components/HoverLamp/HoverLamp';
 import CountAnimate from 'components/CountAnimate';
 
-const ClaimCount = ({type, title, smallText, count, onMouseDown, onMouseUp, onDragStart, styles}) => {
+const ClaimCount = ({type, title, smallText, count, styles}) => {
 	return (
-		<HoverLamp
-			onMouseDown={onMouseDown}
-			onDragStart={onDragStart}
-	 	>
+		<HoverLamp>
 			<div className={`claim-count claim-count_${type}`} style={styles}>
 				<span className="claim-count__dots"></span>
 				<div className="claim-count__title">{title}</div>

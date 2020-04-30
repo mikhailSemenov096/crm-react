@@ -1,7 +1,8 @@
 import React from 'react';
-import styles from './ShadowItem.module.scss';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+
+import styles from './ShadowItem.module.scss';
 
 const ShadowItem = ({ children, mixClasses }) => {
 	const stylesShadow = classNames(styles.container, mixClasses);
